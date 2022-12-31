@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclone | Registre-se</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="./assets/images/favicon.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <form method="post" class="signup-form">
+        <div class="form__container">
+          <h1 class="form__title">Crie sua Conta</h1>
+          <div class="form__control">
+            <label class="form__label" for="email">EMAIL <span class="input__error"></span></label>
+            <input class="form__input" type="email" id="email" name="email" />
+          </div>
+          <div class="form__control">
+            <label class="form__label" for="username">NOME DE USUÁRIO <span class="input__error"></span></label>
+            <input
+              class="form__input"
+              type="text"
+              id="username"
+              name="username"
+            />
+          </div>
+          <div class="form__control">
+            <label class="form__label" for="password1">SENHA <span class="input__error"></span></label>
+            <input
+              class="form__input"
+              type="password"
+              id="password1"
+              name="password1"
+            />
+          </div>
+          <div class="form__control">
+            <label class="form__label" for="password2">CONFIRME A SENHA <span class="input__error"></span></label>
+            <input
+              class="form__input"
+              type="password"
+              id="password2"
+              name="password2"
+            />
+          </div>
+          <div class="form__control">
+            <label class="form__label" for="date">DATA DE DASCIMENTO <span class="input__error"></span></label>
+            <input
+              class="form__input"
+              type="date"
+              id="date"
+              name="date"
+            />
+          </div>
+          <div class="form__control">
+            <button class="form__submit" type="submit">
+              Continuar
+            </button>
+            <a href="#" class="signin-link">Já tem uma conta?</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  <script src="./assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root{
+  --primary-dark: #36393f;
+  --secondary-dark: #212224;
+  --primary-light: #fefffe;
+  --secpndary-light: #b8bbbf;
+  --button-background: #5965f3;
+  --link-color: #05a6e4;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  color: var(--primary-light);
+}
+
+.app{
+  width: 100vw;
+  min-height: 100vh;
+  background: url('../images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form{
+  width: 480px;
+  background: var(--primary-dark);
+  border-radius: 6px;
+  padding: 5rem 0rem;
+}
+
+.form__container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form__title{
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.form__control{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.form__label{
+  color: var(--secpndary-light);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+
+.input__error{
+  font-weight: 600;
+  font-size: 1.22rem;
+  text-transform: lowercase;
+}
+
+.error{
+  color: #f38789;
+}
+
+.form__input{
+  background: var(--secondary-dark);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.652rem;
+  color: var(--primary-light);
+  padding: 10px;
+}
+
+.form__submit{
+  background: var(--button-background);
+  outline: none;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+  color: var(--primary-light);
+  border-radius: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition:  0.25s ease-in-out;
+}
+
+::-webkit-calendar-picker-indicator{
+  filter: invert(1);
+}
+
+.form__submit:hover{
+  filter: brightness(75%);
+}
+
+.signin-link{
+  color: var(--link-color);
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .app{
+    background-image: none;
+    background-color: var(--primary-dark);
+  }
+
+  .form__container{
+    min-height: 600px;
+  }
+}

@@ -2,66 +2,45 @@ const form = document.querySelector('form')
 const [...inputErrors] = document.querySelectorAll('.input__error')
 const [...inputLabels] = document.querySelectorAll('.form__label')
 
+
+// add error messages
 const setError = (inputLabel, element, message) => {
   inputLabel.classList.add('error')
   element.innerText = message
 }
 
+// remove error messages
 const setSucess = (inputLabel, element) => {
   inputLabel.classList.remove('error')
   element.innerText = ''
 }
 
-const isValidEmail = email => {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
+// validations
+const validateInputs = (inputs) => {
+  // check if inputs are empty
+  for (let i = 0; i < inputs.length; i++) {
+    if(inputs[i] === ''){
+      setError(inputLabels[i], inputErrors[i], '- Deve ser preenchido')
 
-const validateInputs = (emailInput, usernameInput, passwordInput, password2Input, dateInput) => {
-  if(emailInput === ''){
-    setError(inputLabels[0], inputErrors[0], '- Deve ser preenchido')
-  
-  } else if (isValidEmail(email)) {
-    setError(inputLabels[0], inputErrors[0], '- Deve ser um email valido')
-  
-  } else {
-    setSucess(inputLabels[0], inputErrors[0])
+    } else {
+      setSucess(inputLabels[i], inputErrors[i])
+    }
   }
 
-  if(usernameInput === ''){
-    setError(inputLabels[1], inputErrors[1], '- Deve ser preenchido')
-  
-  } else if(usernameInput.length < 2 || usernameInput.length > 32) {
+  if(inputs[1].length < 2 || inputs[0].length > 32) {
     setError(inputLabels[1], inputErrors[1], '- Deve conter entre 2 e 32 caracteres')
-  
-  }  else {
-    setSucess(inputLabels[1], inputErrors[1])
-  }
+  }  
 
-  if(passwordInput === ''){
+  if(inputs[2].length < 2 || inputs[2].length > 32){
     setError(inputLabels[2], inputErrors[2], '- Deve ser preenchido')
-  
-  } else {
-    setSucess(inputLabels[2], inputErrors[2])
   }
 
-  if(password2Input === ''){
-    setError(inputLabels[3], inputErrors[3], '- Deve ser preenchido')
-  
-  } else if (password2Input !== passwordInput) {
+  if (inputs[3] !== inputs[2]) {
     setError(inputLabels[3], inputErrors[3], '- Deve ser semelhante a primeira senha')
-  } else {
-    setSucess(inputLabels[3], inputErrors[3])
-  }
-
-  if(dateInput === ''){
-    setError(inputLabels[4], inputErrors[4], '- Deve ser preenchido')
-  
-  } else {
-    setSucess(inputLabels[4], inputErrors[4])
   }
 }
 
+// send form
 form.addEventListener('submit', ( e ) => {
   e.preventDefault()
 
@@ -71,5 +50,6 @@ form.addEventListener('submit', ( e ) => {
   const password2Input = e.target.password2.value
   const dateInput = e.target.date.value
 
-  validateInputs(emailInput, usernameInput, passwordInput, password2Input, dateInput)
+  const inputs = [emailInput, usernameInput, passwordInput, password2Input, dateInput]
+  validateInputs(inputs)
 })

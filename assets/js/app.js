@@ -48,7 +48,7 @@ const validateInputs = (emailInput, usernameInput, passwordInput, password2Input
   if(password2Input === ''){
     setError(inputLabels[3], inputErrors[3], '- Deve ser preenchido')
   
-  } else if (passwordInput !== passwordInput) {
+  } else if (password2Input !== passwordInput) {
     setError(inputLabels[3], inputErrors[3], '- Deve ser semelhante a primeira senha')
   } else {
     setSucess(inputLabels[3], inputErrors[3])

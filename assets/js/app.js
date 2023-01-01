@@ -31,9 +31,10 @@ const validateInputs = (inputs) => {
     setError(inputLabels[1], inputErrors[1], '- Deve conter entre 2 e 32 caracteres')
   }  
 
-  if(inputs[2].length < 2){
+  if(inputs[2].length < 8){
     setError(inputLabels[2], inputErrors[2], '- Deve conter mais de 8 caracteres')
   }
+
 
   if (inputs[3] !== inputs[2]) {
     setError(inputLabels[3], inputErrors[3], '- Deve ser semelhante a primeira senha')
